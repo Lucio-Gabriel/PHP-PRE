@@ -2,6 +2,12 @@
 
 require "../../../bootstrap.php";
 
+if (isEmpty()) {
+    flash('message', 'Preencha todos os campos', 'success');
+
+    header("location:/?page=contato");
+}
+
 $validate = validate([
     'name' => 's',
     'email' => 'e',
